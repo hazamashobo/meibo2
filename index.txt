@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>狭間書房 | Hazama Publishing</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background-color: #ffffff;
+      color: #32a9cd;
+      font-family: "ヒラギノ角ゴシック", serif;
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    body h2 {
+      color: #000000;
+      font-size: 1em;
+      font-family: "ヒラギノ角ゴシック", serif;
+      margin: 0;
+      margin-left: 4px;
+      border: none;
+    }
+    /* ヘッダー */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background-color: #32a9cd;
+      color: #fff;
+    }
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      letter-spacing: 0.2em;
+      line-height: 1;
+      border: none;
+    }
+    .subtitle {
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-size: 1em;
+      color: #fff;
+    }
+    .search {
+      display: flex;
+      align-items: center;
+    }
+    .search input {
+      padding: 4px;
+      border: 2px solid #003366;
+      border-radius: 4px;
+      width: 150px;
+      background-color: #fff;
+      color: #003366;
+    }
+    .search input::placeholder {
+      color: #003366aa;
+    }
+    .search button {
+      padding: 4px 6px;
+      margin-left: 4px;
+      border-radius: 4px;
+      border: none;
+      background-color: #003366;
+      color: #fff;
+      cursor: pointer;
+    }
+    .search button:hover {
+      background-color: #001f33;
+    }
+    /* ナビゲーション */
+    nav {
+      text-align: center;
+      padding: 1em 0;
+      background-color: #f0f0f0;
+    }
+    nav a {
+      color: #003366;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #32a9cd;
+    }
+    /* コンテンツ */
+    .content {
+      flex: 1;
+      max-width: 1000px;
+      margin: 2em auto;
+      padding: 0 1em;
+      text-align: left;
+    }
+    /* フッター */
+    footer {
+      background-color: #32a9cd;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-wrapper">
+      <h1>狭間書房</h1>
+      <p class="subtitle">- Hazama Publishing -</p>
+    </div>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="キーワード入力">
+      <button onclick="searchSite()">検索</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">狭間書房について</a>
+    <a href="#">刊行物</a>
+    <a href="#">お問い合わせ</a>
+  </nav>
+
+  <div class="content">
+    <h1>検索結果</h1>
+    <h2>
+      <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:05634423-e922-4df4-9d3d-c1eaecb39c3a">
+        狭間書房 社員名簿.pdf
+      </a>
+    </h2>
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    <p>© 2025 狭間書房</p>
+  </footer>
+
+  <div id="searchResults"></div>
+
+  <script>
+    // ARG隠しキーワード
+    const hiddenKeywords = [
+      {keyword: "社員名簿", title: "社員名簿PDF", url: "https://acrobat.adobe.com/id/urn:aaid:sc:AP:05634423-e922-4df4-9d3d-c1eaecb39c3a", message: "発見！"},
+      {keyword: "間野", title: "間野に関するページ", url: "hidden/mano.html", message: "間野に関するページが見つかりました！"}
+    ];
+
+    // URLのクエリからkeywordを取得
+    const params = new URLSearchParams(window.location.search);
+    const keyword = params.get('keyword');
+    const resultDiv = document.getElementById('result');
+
+    if (resultDiv) {
+      if (!keyword) {
+        resultDiv.innerHTML = "<p>データが見つかりませんでした。</p>";
+      } else {
+        const found = hiddenKeywords.find(item => item.keyword === keyword);
+        if (found) {
+          resultDiv.innerHTML = `<p>件名: <a href="${found.url}" target="_blank">${found.title}</a></p>`;
+        } else {
+          resultDiv.innerHTML = "<p>データが見つかりませんでした。</p>";
+        }
+      }
+    }
+
+    // 検索実行
+    function searchSite() {
+      const input = document.getElementById('searchInput').value.trim();
+      const resultsDiv = document.getElementById('searchResults');
+      resultsDiv.innerHTML = "";
+
+      if (!input) {
+        resultsDiv.innerHTML = "<p>キーワードを入力してください</p>";
+        return;
+      }
+
+      const found = hiddenKeywords.find(item => item.keyword === input);
+      if (found) {
+        resultsDiv.innerHTML = `<p>${found.message}</p><p><a href="${found.url}" style="color:#32a9cd;">こちらへ進む</a></p>`;
+      } else {
+        resultsDiv.innerHTML = "<p>該当するページはありません。</p>";
+      }
+    }
+  </script>
+</body>
+</html>
