@@ -21,15 +21,21 @@ th, td {
 table {
   width: 90%;
   margin: auto;
+  margin-bottom: 2em; /* 下に余白 */
   border: 1px solid #fff; 
   border-collapse: collapse;
   font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
-  
+}
+department {
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 1em;
 }
 th, td {
   border: 1px solid #fff;
   padding: 6px;
-  text-align: left; /* 基本は左寄せ */
+  vertical-align: middle; /* 縦方向中央 */
+  text-align: left; 
 }
 td:nth-child(1),
 td:nth-child(4),
@@ -47,6 +53,10 @@ th:nth-child(5) {
       margin-left: 4px;
       border: none;
     }
+  ruby rt {
+  font-size: 0.7em;
+  line-height: 1.2;
+}
     /* ヘッダー */
     header {
       display: flex;
