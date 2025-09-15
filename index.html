@@ -8,15 +8,36 @@
       height: 100%;
       margin: 0;
     }
-    body {
-      background-color: #ffffff;
-      color: #32a9cd;
-      font-family: "ヒラギノ角ゴシック", serif;
-      line-height: 1.8;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+  body {
+  font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+  background-color: #000000ff;
+  color: #f2f2f2;
+}
+th, td {
+  border: 1px solid #ffffffff;
+  padding: 6px;
+  text-align: center;
+}
+table {
+  width: 90%;
+  margin: auto;
+  border: 1px solid #fff; 
+  border-collapse: collapse;
+  font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+}
+th, td {
+  border: 1px solid #fff;
+  padding: 6px;
+  text-align: left; /* 基本は左寄せ */
+}
+td:nth-child(1),
+td:nth-child(4),
+td:nth-child(5),
+th:nth-child(1),
+th:nth-child(4),
+th:nth-child(5) {
+  text-align: center; /* No・年齢・性別だけ中央 */
+}
     body h2 {
       color: #000000;
       font-size: 1em;
@@ -130,15 +151,125 @@
     <a href="#">お問い合わせ</a>
   </nav>
 
-  <div class="content">
-    <h1>検索結果</h1>
-    <h2>
-      <a href="https://acrobat.adobe.com/id/urn:aaid:sc:ap:05634423-e922-4df4-9d3d-c1eaecb39c3a">
-        狭間書房 社員名簿.pdf
-      </a>
-    </h2>
-    <div id="result"></div>
-  </div>
+ <body>
+<h2 style="text-align:center;">株式会社 狭間書房</h2>
+<h1 style="text-align:center;">社員名簿</h1>
+<p style="text-align:left;">部署名：編集部</p>
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>氏名</th>
+    <th>入社年</th>
+    <th>年齢</th>
+    <th>性別</th>
+    <th>備考</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td><ruby><rb>桐須 瑛人</rb><rt>キリス エイト</rt></ruby></td>
+    <td>S62.4.1</td>
+    <td>60</td>
+    <td>男</td>
+    <td>編集長</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td><ruby><rb>薮 翔子</rb><rt>ヤブ ショウコ</rt></ruby></td>
+    <td>H4.4.1</td>
+    <td>55</td>
+    <td>女</td>
+    <td>副編集長</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td><ruby><rb>安藤 玲香</rb><rt>アンドウ レイカ</rt></ruby></td>
+    <td>H13.4.1</td>
+    <td>46</td>
+    <td>女</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>4</td>
+    <td><ruby><rb>立城 順平</rb><rt>タテシロ ジュンペイ</rt></ruby></td>
+    <td>H19.4.1</td>
+    <td>40</td>
+    <td>男</td>
+    <td>カスタマー担当</td>
+  </tr>
+ <tr>
+    <td>5</td>
+    <td><ruby><rb>佐久間 大晴</rb><rt>サクマ タイセイ</rt></ruby></td>
+    <td>H24.4.1</td>
+    <td>35</td>
+    <td>男</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>6</td>
+    <td><ruby><rb>鳥羽 舞</rb><rt>トバ マイ</rt></ruby></td>
+    <td>H26.4.1</td>
+    <td>33</td>
+    <td>女</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>7</td>
+    <td><ruby><rb>大渕 航也</rb><rt>オオブチ コウヤ</rt></ruby></td>
+    <td>H26.4.1</td>
+    <td>33</td>
+    <td>男</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>8</td>
+    <td><ruby><rb>外山 昴</rb><rt>トヤマ スバル</rt></ruby></td>
+    <td>R7.4.1</td>
+    <td>30</td>
+    <td>男</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>9</td>
+    <td><ruby><rb>福井 里帆</rb><rt>フクイ リホ</rt></ruby></td>
+    <td>H29.4.1</td>
+    <td>27</td>
+    <td>女</td>
+    <td>情報システム担当</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td><ruby><rb>湯田 伊織</rb><rt>ユダ イオリ</rt></ruby></td>
+    <td>R2.4.1</td>
+    <td>27</td>
+    <td>男</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>11</td>
+    <td><ruby><rb>赤羽 義人</rb><rt>アカハネ ヨシト</rt></ruby></td>
+    <td>R5.4.1</td>
+    <td>25</td>
+    <td>男</td>
+    <td></td>
+   <tr>
+    <td>12</td>
+    <td><ruby><rb>下野 凛</rb><rt>シモノ リン</rt></ruby></td>
+    <td>R6.4.1</td>
+    <td>24</td>
+    <td>女</td>
+    <td></td>
+  </tr><tr>
+    <td>13</td>
+    <td><ruby><rb>堀北 大樹</rb><rt>ホリキタ ダイキ</rt></ruby></td>
+    <td>R7.4.1</td>
+    <td>23</td>
+    <td>男</td>
+    <td></td>
+  </tr>
+
+</table>
+</body>
 
   <footer>
     <p>© 2025 狭間書房</p>
