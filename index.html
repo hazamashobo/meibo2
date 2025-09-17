@@ -146,20 +146,23 @@ th:nth-child(5) {
 </head>
 <body>
   <header>
-    <div class="title-wrapper">
-      <h1>狭間書房</h1>
-      <p class="subtitle">- Hazama Publishing -</p>
+ <div class="title-wrapper">
+    <h1>狭間書房</h1>
+    <p class="subtitle">Hazama Publishing</p>
+  </div>
+  <div class="search">
+      <form action="https://hazamashobo.github.io/result/" method="get">
+        <input type="text" id="searchInput" name="q" placeholder="キーワード入力">
+        <button type="submit">検索</button>
+      </form>
     </div>
-    <div class="search">
-      <input type="text" id="searchInput" placeholder="キーワード入力">
-      <button onclick="searchSite()">検索</button>
-    </div>
-  </header>
+</header>
 
   <nav>
-    <a href="#">狭間書房について</a>
-    <a href="#">刊行物</a>
-    <a href="#">お問い合わせ</a>
+    <a href="https://hazamashobo.github.io/main/index.html">ホーム</a>
+    <a href="https://hazamashobo.github.io/company/index.html">狭間書房について</a>
+    <a href="https://hazamashobo.github.io/books/index.html">刊行物</a>
+    <a href="https://hazamashobo.github.io/contact/index.html"class="active">お問い合わせ</a>
   </nav>
 
  <body>
