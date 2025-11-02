@@ -38,11 +38,11 @@ th, td {
   text-align: left; 
 }
 td:nth-child(1),
-td:nth-child(4),
 td:nth-child(5),
+td:nth-child(6),
 th:nth-child(1),
-th:nth-child(4),
-th:nth-child(5) {
+th:nth-child(5),
+th:nth-child(6) {
   text-align: center; /* No・年齢・性別だけ中央 */
 }
     body h2 {
@@ -63,7 +63,7 @@ th:nth-child(5) {
       justify-content: space-between;
       align-items: center;
       padding: 1em 2em;
-      background-color: #32a9cd;
+      background-color: #666;
       color: #fff;
     }
     .title-wrapper {
@@ -124,7 +124,7 @@ th:nth-child(5) {
       font-weight: bold;
     }
     nav a:hover {
-      color: #32a9cd;
+      color: #666;
     }
     /* コンテンツ */
     .content {
@@ -136,7 +136,7 @@ th:nth-child(5) {
     }
     /* フッター */
     footer {
-      background-color: #32a9cd;
+      background-color: #666;
       color: #fff;
       text-align: center;
       padding: 1em;
@@ -168,12 +168,13 @@ th:nth-child(5) {
  <body>
 <h2 style="text-align:center;">株式会社 狭間書房</h2>
 <h1 style="text-align:center;">社員名簿</h1>
-<p style="text-align:left;">部署名：編集部</p>
+<p style="text-align:left; margin-left: 5%;">部署名:編集部</p>
 
 <table>
   <tr>
     <th>No</th>
     <th>氏名</th>
+    <th>ふりがな</th>
     <th>入社年</th>
     <th>年齢</th>
     <th>性別</th>
@@ -181,7 +182,8 @@ th:nth-child(5) {
   </tr>
   <tr>
     <td>1</td>
-    <td><ruby><rb>桐須 瑛人</rb><rt>キリス エイト</rt></ruby></td>
+    <td>桐須 瑛人</td>
+    <td>キリス エイト</td>
     <td>2000.4.1</td>
     <td>60</td>
     <td>男</td>
@@ -189,7 +191,8 @@ th:nth-child(5) {
   </tr>
   <tr>
     <td>2</td>
-    <td><ruby><rb>薮 翔子</rb><rt>ヤブ ショウコ</rt></ruby></td>
+    <td>薮 翔子</td>
+    <td>ヤブ ショウコ</td>
     <td>2002.4.1</td>
     <td>55</td>
     <td>女</td>
@@ -197,7 +200,8 @@ th:nth-child(5) {
   </tr>
   <tr>
     <td>3</td>
-    <td><ruby><rb>鳥羽 舞</rb><rt>トバ マイ</rt></ruby></td>
+    <td>鳥羽 舞</td>
+    <td>トバ マイ</td>
     <td>2006.4.1</td>
     <td>33</td>
     <td>女</td>
@@ -205,7 +209,8 @@ th:nth-child(5) {
   </tr>
    <tr>
     <td>4</td>
-    <td><ruby><rb>立城 順平</rb><rt>タテシロ ジュンペイ</rt></ruby></td>
+    <td>立城 順平</td>
+    <td>タテシロ ジュンペイ</td>
     <td>2008.4.1</td>
     <td>40</td>
     <td>男</td>
@@ -213,7 +218,8 @@ th:nth-child(5) {
   </tr>
  <tr>
     <td>5</td>
-    <td><ruby><rb>佐久間 大晴</rb><rt>サクマ タイセイ</rt></ruby></td>
+    <td>佐久間 大晴</td>
+    <td>サクマ タイセイ</td>
     <td>2018.4.1</td>
     <td>35</td>
     <td>男</td>
@@ -221,14 +227,17 @@ th:nth-child(5) {
   </tr>
    <tr>
     <td>6</td>
-    <td><ruby><rb>安藤 玲香</rb><rt>アンドウ レイカ</rt></ruby></td>
+    <td>安藤 玲香</td>
+    <td>アンドウ レイカ</td>
     <td>2018.4.1</td>
     <td>46</td>
     <td>女</td>
+    <td></td>
   </tr>
    <tr>
     <td>7</td>
-    <td><ruby><rb>大渕 航也</rb><rt>オオブチ コウヤ</rt></ruby></td>
+    <td>大渕 航也</td>
+    <td>オオブチ コウヤ</td>
     <td>2019.4.1</td>
     <td>33</td>
     <td>男</td>
@@ -236,7 +245,8 @@ th:nth-child(5) {
   </tr>
    <tr>
     <td>8</td>
-    <td><ruby><rb>外山 昴</rb><rt>トヤマ スバル</rt></ruby></td>
+    <td>外山 昴</td>
+    <td>トヤマ スバル</td>
     <td>2020.4.1</td>
     <td>30</td>
     <td>男</td>
@@ -244,7 +254,8 @@ th:nth-child(5) {
   </tr>
    <tr>
     <td>9</td>
-    <td><ruby><rb>福井 里帆</rb><rt>フクイ リホ</rt></ruby></td>
+    <td>福井 里帆</td>
+    <td>フクイ リホ</td>
     <td>2021.4.1</td>
     <td>27</td>
     <td>女</td>
@@ -252,7 +263,8 @@ th:nth-child(5) {
   </tr>
   <tr>
     <td>10</td>
-    <td><ruby><rb>湯田 伊織</rb><rt>ユダ イオリ</rt></ruby></td>
+    <td>湯田 伊織</td>
+    <td>ユダ イオリ</td>
     <td>2022.4.1</td>
     <td>27</td>
     <td>男</td>
@@ -260,21 +272,26 @@ th:nth-child(5) {
   </tr>
    <tr>
     <td>11</td>
-    <td><ruby><rb>赤羽 義人</rb><rt>アカハネ ヨシト</rt></ruby></td>
+    <td>赤羽 義人</td>
+    <td>アカバネ ヨシト</td>
     <td>2023.4.1</td>
     <td>25</td>
     <td>男</td>
     <td></td>
+  </tr>
    <tr>
     <td>12</td>
-    <td><ruby><rb>下野 凛</rb><rt>シモノ リン</rt></ruby></td>
+    <td>下野 凛</td>
+    <td>シモノ リン</td>
     <td>2024.4.1</td>
     <td>24</td>
     <td>女</td>
     <td></td>
-  </tr><tr>
+  </tr>
+  <tr>
     <td>13</td>
-    <td><ruby><rb>堀北 大樹</rb><rt>ホリキタ ダイキ</rt></ruby></td>
+    <td>堀北 大樹</td>
+    <td>ホリキタ ダイキ</td>
     <td>2025.4.1</td>
     <td>23</td>
     <td>男</td>
@@ -289,7 +306,7 @@ th:nth-child(5) {
   </footer>
 
   <div id="searchResults"></div>
-　<script>
+  <script>
     // URLのクエリからkeywordを取得
     const params = new URLSearchParams(window.location.search);
     const keyword = params.get('keyword');
@@ -321,7 +338,7 @@ th:nth-child(5) {
 
       const found = hiddenKeywords.find(item => item.keyword === input);
       if (found) {
-        resultsDiv.innerHTML = `<p>${found.message}</p><p><a href="${found.url}" style="color:#32a9cd;">こちらへ進む</a></p>`;
+        resultsDiv.innerHTML = `<p>${found.message}</p><p><a href="${found.url}" style="color:#666;">こちらへ進む</a></p>`;
       } else {
         resultsDiv.innerHTML = "<p>該当するページはありません。</p>";
       }
