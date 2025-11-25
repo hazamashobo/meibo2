@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>狭間書房 | Hazama Publishing</title>
-  <style>
+<meta charset="utf-8"/>
+<title>狭間書房 | Hazama Publishing</title>
+<style>
     html, body {
       height: 90%;
       margin: 0;
@@ -40,10 +42,18 @@ th, td {
 td:nth-child(1),
 td:nth-child(5),
 td:nth-child(6),
+td:nth-child(7),
+td:nth-child(8),
 th:nth-child(1),
 th:nth-child(5),
-th:nth-child(6) {
-  text-align: center; /* No・年齢・性別だけ中央 */
+th:nth-child(6),
+th:nth-child(7),
+th:nth-child(8) {
+  text-align: center; /* No・年齢・性別・個人情報・マイページだけ中央 */
+}
+th:nth-child(7),
+th:nth-child(8) {
+  width: 4em;
 }
     body h2 {
       color: #000000;
@@ -145,168 +155,173 @@ th:nth-child(6) {
   </style>
 </head>
 <body>
-  <header>
- <div class="title-wrapper">
-    <h1>狭間書房</h1>
-    <p class="subtitle">Hazama Publishing</p>
-  </div>
-  <div class="search">
-      <form action="https://hazamashobo.github.io/result/" method="get">
-        <input type="text" id="searchInput" name="q" placeholder="キーワード入力">
-        <button type="submit">検索</button>
-      </form>
-    </div>
+<header>
+<div class="title-wrapper">
+<h1>狭間書房</h1>
+<p class="subtitle">Hazama Publishing</p>
+</div>
+<div class="search">
+<form action="https://hazamashobo.github.io/result/" method="get">
+<input id="searchInput" name="q" placeholder="キーワード入力" type="text"/>
+<button type="submit">検索</button>
+</form>
+</div>
 </header>
-
-  <nav>
-    <a href="https://hazamashobo.github.io/main/index.html">ホーム</a>
-    <a href="https://hazamashobo.github.io/company/index.html">狭間書房について</a>
-    <a href="https://hazamashobo.github.io/books/index.html">刊行物</a>
-    <a href="https://hazamashobo.github.io/contact/index.html"class="active">お問い合わせ</a>
-  </nav>
-
- <body>
+<nav>
+<a href="https://hazamashobo.github.io/main/index.html">ホーム</a>
+<a href="https://hazamashobo.github.io/company/index.html">狭間書房について</a>
+<a href="https://hazamashobo.github.io/books/index.html">刊行物</a>
+<a class="active" href="https://hazamashobo.github.io/contact/index.html">お問い合わせ</a>
+</nav>
+<body>
 <h2 style="text-align:center;">株式会社 狭間書房</h2>
 <h1 style="text-align:center;">社員名簿</h1>
 <p style="text-align:left; margin-left: 5%;">部署名:編集部</p>
-
 <table>
-  <tr>
-    <th>No</th>
-    <th>氏名</th>
-    <th>カナ</th>
-    <th>入社年</th>
-    <th>年齢</th>
-    <th>性別</th>
-    <th>備考</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>桐須 瑛人</td>
-    <td>キリス エイト</td>
-    <td>2000.4.1</td>
-    <td>60</td>
-    <td>男</td>
-    <td>編集長</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>薮 翔子</td>
-    <td>ヤブ ショウコ</td>
-    <td>2002.4.1</td>
-    <td>55</td>
-    <td>女</td>
-    <td>副編集長</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>鳥羽 舞</td>
-    <td>トバ マイ</td>
-    <td>2006.4.1</td>
-    <td>33</td>
-    <td>女</td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>4</td>
-    <td>立城 順平</td>
-    <td>タテシロ ジュンペイ</td>
-    <td>2008.4.1</td>
-    <td>40</td>
-    <td>男</td>
-    <td>カスタマー担当</td>
-  </tr>
- <tr>
-    <td>5</td>
-    <td>佐久間 大晴</td>
-    <td>サクマ タイセイ</td>
-    <td>2018.4.1</td>
-    <td>35</td>
-    <td>男</td>
-    <td>企画営業</td>
-  </tr>
-   <tr>
-    <td>6</td>
-    <td>安藤 玲香</td>
-    <td>アンドウ レイカ</td>
-    <td>2018.4.1</td>
-    <td>46</td>
-    <td>女</td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>7</td>
-    <td>大渕 航也</td>
-    <td>オオブチ コウヤ</td>
-    <td>2019.4.1</td>
-    <td>33</td>
-    <td>男</td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>8</td>
-    <td>外山 昴</td>
-    <td>トヤマ スバル</td>
-    <td>2020.4.1</td>
-    <td>30</td>
-    <td>男</td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>9</td>
-    <td>福井 里帆</td>
-    <td>フクイ リホ</td>
-    <td>2021.4.1</td>
-    <td>27</td>
-    <td>女</td>
-    <td>情報システム担当</td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>湯田 伊織</td>
-    <td>ユダ イオリ</td>
-    <td>2022.4.1</td>
-    <td>27</td>
-    <td>男</td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>11</td>
-    <td>赤羽 義人</td>
-    <td>アカハネ ヨシト</td>
-    <td>2023.4.1</td>
-    <td>25</td>
-    <td>男</td>
-    <td></td>
-  </tr>
-   <tr>
-    <td>12</td>
-    <td>下野 凛</td>
-    <td>シモノ リン</td>
-    <td>2024.4.1</td>
-    <td>24</td>
-    <td>女</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>13</td>
-    <td>堀北 大樹</td>
-    <td>ホリキタ ダイキ</td>
-    <td>2025.4.1</td>
-    <td>23</td>
-    <td>男</td>
-    <td></td>
-  </tr>
-
-</table>
+<tr>
+<th>No</th>
+<th>氏名</th>
+<th>カナ</th>
+<th>年齢</th>
+<th>性別</th>
+<th>備考</th>
+<th style="width: 5em; text-align: center;">個人情報</th>
+<th style="width: 5em; text-align: center;">マイページ</th>
+</tr>
+<tr>
+<td>1</td>
+<td>桐須 瑛人</td>
+<td>キリス エイト</td>
+<td>60</td>
+<td>男</td>
+<td>編集長</td>
+<td style="text-align: center;">◯</td>
+<td style="text-align: center;">◯</td>
+</tr>
+<tr>
+<td>2</td>
+<td>薮 翔子</td>
+<td>ヤブ ショウコ</td>
+<td>55</td>
+<td>女</td>
+<td>副編集長</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>3</td>
+<td>鳥羽 舞</td>
+<td>トバ マイ</td>
+<td>33</td>
+<td>女</td>
+<td></td>
+<td style="text-align: center;">◯</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>4</td>
+<td>立城 順平</td>
+<td>タテシロ ジュンペイ</td>
+<td>40</td>
+<td>男</td>
+<td></td> <td style="text-align: center;">◯</td>
+</tr>
+<tr>
+<td>5</td>
+<td>佐久間 大晴</td>
+<td>サクマ タイセイ</td>
+<td>35</td>
+<td>男</td>
+<td>企画営業</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>6</td>
+<td>安藤 玲香</td>
+<td>アンドウ レイカ</td>
+<td>46</td>
+<td>女</td>
+<td></td>
+<td style="text-align: center;">◯</td>&gt;
+    <td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>7</td>
+<td>大渕 航也</td>
+<td>オオブチ コウヤ</td>
+<td>33</td>
+<td>男</td>
+<td></td>
+<td style="text-align: center;">1on1担当</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>8</td>
+<td>外山 昴</td>
+<td>トヤマ スバル</td>
+<td>30</td>
+<td>男</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>9</td>
+<td>福井 里帆</td>
+<td>フクイ リホ</td>
+<td>27</td>
+<td>女</td>
+<td>情報システム担当</td>
+<td style="text-align: center;">◯</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>10</td>
+<td>湯田 伊織</td>
+<td>ユダ イオリ</td>
+<td>27</td>
+<td>男</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">◯</td><tr>
+<td>11</td>
+<td>赤羽 義人</td>
+<td>アカハネ ヨシト</td>
+<td>25</td>
+<td>男</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">◯</td>
+</tr>
+<tr>
+<td>12</td>
+<td>下野 凛</td>
+<td>シモノ リン</td>
+<td>24</td>
+<td>女</td>
+<td></td>
+<td style="text-align: center;">◯</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>13</td>
+<td>堀北 大樹</td>
+<td>ホリキタ ダイキ</td>
+<td>23</td>
+<td>男</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">◯</td>
+</tr>
+</tr></table>
+<p style="text-align: left; color: #666; margin-top: 1em; width: 90%; margin-left: auto; margin-right: auto;">※個人情報とマイページの更新があるものには「◯」を記す</p>
 </body>
-
-  <footer>
-    <p>© 2025 狭間書房</p>
-  </footer>
-
-  <div id="searchResults"></div>
-  <script>
+<footer>
+<p>© 2025 狭間書房</p>
+</footer>
+<div id="searchResults"></div>
+<script>
     // URLのクエリからkeywordを取得
     const params = new URLSearchParams(window.location.search);
     const keyword = params.get('keyword');
