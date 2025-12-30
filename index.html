@@ -1,365 +1,561 @@
-
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<title>狭間書房 | Hazama Publishing</title>
-<style>
-    html, body {
-      height: 90%;
-      margin: 0;
-    }
-  body {
-  font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
-  background-color: #000000ff;
-  color: #f2f2f2;
-}
-th, td {
-  border: 1px solid #ffffffff;
-  padding: 6px;
-  text-align: center;
-}
-table {
-  width: 90%;
-  margin: auto;
-  margin-bottom: 2em; /* 下に余白 */
-  border: 1px solid #fff; 
-  border-collapse: collapse;
-  font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
-}
-department {
-  text-align: left;
-  margin-left: 5%;
-  margin-bottom: 1em;
-}
-th, td {
-  border: 1px solid #fff;
-  padding: 6px;
-  vertical-align: middle; /* 縦方向中央 */
-  text-align: left; 
-}
-td:nth-child(1),
-td:nth-child(5),
-td:nth-child(6),
-td:nth-child(7),
-td:nth-child(8),
-th:nth-child(1),
-th:nth-child(5),
-th:nth-child(6),
-th:nth-child(7),
-th:nth-child(8) {
-  text-align: center; /* No・年齢・性別・個人情報・マイページだけ中央 */
-}
-th:nth-child(7),
-th:nth-child(8) {
-  width: 4em;
-}
-    body h2 {
-      color: #000000;
-      font-size: 1em;
-      font-family: "ヒラギノ角ゴシック", serif;
-      margin: 0;
-      margin-left: 4px;
-      border: none;
-    }
-  ruby rt {
-  font-size: 0.7em;
-  line-height: 1.2;
-}
-    /* ヘッダー */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 2em;
-      background-color: #666;
-      color: #fff;
-    }
-    .title-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      letter-spacing: 0.2em;
-      line-height: 1;
-      border: none;
-    }
-    .subtitle {
-      margin: 0;
-      padding: 0;
-      line-height: 1;
-      font-size: 1em;
-      color: #fff;
-    }
-    .search {
-      display: flex;
-      align-items: center;
-    }
-    .search input {
-      padding: 4px;
-      border: 2px solid #003366;
-      border-radius: 4px;
-      width: 150px;
-      background-color: #fff;
-      color: #003366;
-    }
-    .search input::placeholder {
-      color: #003366aa;
-    }
-    .search button {
-      padding: 4px 6px;
-      margin-left: 4px;
-      border-radius: 4px;
-      border: none;
-      background-color: #003366;
-      color: #fff;
-      cursor: pointer;
-    }
-    .search button:hover {
-      background-color: #001f33;
-    }
-    /* ナビゲーション */
-    nav {
-      text-align: center;
-      padding: 1em 0;
-      background-color: #f0f0f0;
-    }
-    nav a {
-      color: #003366;
-      margin: 0 1em;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #666;
-    }
-    /* コンテンツ */
-    .content {
-      flex: 1;
-      max-width: 1000px;
-      margin: 2em auto;
-      padding: 0 1em;
-      text-align: left;
-    }
-    /* フッター */
-    footer {
-      background-color: #666;
-      color: #fff;
-      text-align: center;
-      padding: 1em;
-      margin-top: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社 狭間書房 社員名簿</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+            background-color: #000000;
+            color: #f2f2f2;
+        }
+
+        /* ヘッダー */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            background-color: #666;
+            color: #fff;
+            flex-shrink: 0;
+            gap: 2em;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .title-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-wrapper a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .title-wrapper a:hover h1 {
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 0.2em;
+            line-height: 1;
+            border: none;
+        }
+
+        .subtitle {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            font-size: 1em;
+            color: #fff;
+        }
+
+        /* 検索 */
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .search form {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .search input {
+            padding: 4px;
+            border: 2px solid #333;
+            border-radius: 4px;
+            width: 150px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .search input::placeholder {
+            color: #333aa;
+        }
+
+        .search button {
+            padding: 4px 6px;
+            border-radius: 4px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .search button:hover {
+            background-color: #222;
+        }
+
+        /* ナビゲーション */
+        nav {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #f0f0f0;
+            flex-shrink: 0;
+            overflow-x: auto;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        nav a {
+            color: #333;
+            margin: 0 1em;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: #666;
+        }
+
+        nav a.active {
+            color: #666;
+            border-bottom: 2px solid #666;
+        }
+
+        /* コンテンツ */
+        .content {
+            flex: 1;
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 0 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .content h2 {
+            color: #f2f2f2;
+            font-size: 1em;
+            font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+            margin: 0;
+            margin-left: 4px;
+            border: none;
+            text-align: center;
+        }
+
+        .content h1 {
+            color: #f2f2f2;
+            text-align: center;
+            margin: 1em 0;
+        }
+
+        .department {
+            text-align: left;
+            margin-left: 5%;
+            margin-bottom: 1em;
+            color: #f2f2f2;
+        }
+
+        /* テーブル */
+        table {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 2em;
+            border: 1px solid #fff;
+            border-collapse: collapse;
+            font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+        }
+
+        th, td {
+            border: 1px solid #fff;
+            padding: 6px;
+            vertical-align: middle;
+            text-align: left;
+        }
+
+        td:nth-child(1),
+        td:nth-child(5),
+        td:nth-child(6),
+        td:nth-child(7),
+        td:nth-child(8),
+        th:nth-child(1),
+        th:nth-child(5),
+        th:nth-child(6),
+        th:nth-child(7),
+        th:nth-child(8) {
+            text-align: center;
+        }
+
+        th:nth-child(7),
+        th:nth-child(8) {
+            width: 4em;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        td {
+            color: #f2f2f2;
+        }
+
+        /* テーブル下部の注記 */
+        .table-note {
+            text-align: left;
+            color: #999;
+            font-size: 0.9em;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            flex-shrink: 0;
+            margin-top: auto;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            header {
+                padding: 1em;
+                justify-content: center;
+                text-align: center;
+                flex-wrap: wrap;
+                gap: 1em;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .title-wrapper {
+                width: 100%;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .search form {
+                width: 100%;
+                display: flex;
+            }
+
+            .search input {
+                width: 100%;
+                flex: 1;
+            }
+
+            nav a {
+                margin: 0 0.5em;
+                font-size: 0.9em;
+            }
+
+            .content {
+                padding: 0 0.5em;
+            }
+
+            table {
+                width: 100%;
+                font-size: 0.85em;
+            }
+
+            th, td {
+                padding: 4px;
+            }
+
+            th:nth-child(7),
+            th:nth-child(8) {
+                width: auto;
+            }
+
+            .table-note {
+                width: 100%;
+                padding: 0 0.5em;
+                box-sizing: border-box;
+                font-size: 0.8em;
+            }
+
+            .department {
+                margin-left: 0.5em;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                gap: 0.5em;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .search {
+                width: 100%;
+            }
+
+            .search input {
+                width: 100%;
+                padding: 0.5em;
+            }
+
+            .search button {
+                padding: 0.5em 0.8em;
+                font-size: 0.9em;
+            }
+
+            nav a {
+                margin: 0 0.3em;
+                font-size: 0.8em;
+            }
+
+            .content {
+                padding: 0 0.3em;
+                margin: 1em auto;
+            }
+
+            .content h1 {
+                font-size: 1.3em;
+            }
+
+            table {
+                width: 100%;
+                font-size: 0.75em;
+            }
+
+            th, td {
+                padding: 3px;
+            }
+
+            .table-note {
+                width: 100%;
+                padding: 0 0.3em;
+                box-sizing: border-box;
+                font-size: 0.75em;
+            }
+
+            .department {
+                margin-left: 0.3em;
+                font-size: 0.85em;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="title-wrapper">
-<h1>狭間書房</h1>
-<p class="subtitle">Hazama Publishing</p>
-</div>
-<div class="search">
-<form action="https://hazamashobo.github.io/result/" method="get">
-<input id="searchInput" name="q" placeholder="キーワード入力" type="text"/>
-<button type="submit">検索</button>
-</form>
-</div>
-</header>
-<nav>
-<a href="https://hazamashobo.github.io/main/index.html">ホーム</a>
-<a href="https://hazamashobo.github.io/company/index.html">狭間書房について</a>
-<a href="https://hazamashobo.github.io/books/index.html">刊行物</a>
-<a class="active" href="https://hazamashobo.github.io/contact/index.html">お問い合わせ</a>
-</nav>
-<body>
-<h2 style="text-align:center;">株式会社 狭間書房</h2>
-<h1 style="text-align:center;">社員名簿</h1>
-<p style="text-align:left; margin-left: 5%;">部署名:編集部</p>
-<table>
-<tr>
-<th>No</th>
-<th>氏名</th>
-<th>カナ</th>
-<th>年齢</th>
-<th>性別</th>
-<th>備考</th>
-<th style="width: 5em; text-align: center;">個人情報</th>
-<th style="width: 5em; text-align: center;">マイページ</th>
-</tr>
-<tr>
-<td>1</td>
-<td>桐須 瑛人</td>
-<td>キリス エイト</td>
-<td>60</td>
-<td>男</td>
-<td>編集長</td>
-<td style="text-align: center;">◯</td>
-<td style="text-align: center;">◯</td>
-</tr>
-<tr>
-<td>2</td>
-<td>薮 翔子</td>
-<td>ヤブ ショウコ</td>
-<td>55</td>
-<td>女</td>
-<td>副編集長</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>3</td>
-<td>鳥羽 舞</td>
-<td>トバ マイ</td>
-<td>33</td>
-<td>女</td>
-<td></td>
-<td style="text-align: center;">◯</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>4</td>
-<td>立城 順平</td>
-<td>タテシロ ジュンペイ</td>
-<td>40</td>
-<td>男</td>
-<td>1on1担当</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">◯</td>
-</tr>
-<tr>
-<td>5</td>
-<td>佐久間 大晴</td>
-<td>サクマ タイセイ</td>
-<td>35</td>
-<td>男</td>
-<td>企画営業</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>6</td>
-<td>安藤 玲香</td>
-<td>アンドウ レイカ</td>
-<td>46</td>
-<td>女</td>
-<td></td>
-<td style="text-align: center;">◯</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>7</td>
-<td>大渕 航也</td>
-<td>オオブチ コウヤ</td>
-<td>33</td>
-<td>男</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>8</td>
-<td>外山 昴</td>
-<td>トヤマ スバル</td>
-<td>30</td>
-<td>男</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>9</td>
-<td>福井 里帆</td>
-<td>フクイ リホ</td>
-<td>27</td>
-<td>女</td>
-<td>情報システム担当</td>
-<td style="text-align: center;">◯</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>10</td>
-<td>湯田 伊織</td>
-<td>ユダ イオリ</td>
-<td>27</td>
-<td>男</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">◯</td><tr>
-<td>11</td>
-<td>赤羽 義人</td>
-<td>アカハネ ヨシト</td>
-<td>25</td>
-<td>男</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">◯</td>
-</tr>
-<tr>
-<td>12</td>
-<td>下野 凛</td>
-<td>シモノ リン</td>
-<td>24</td>
-<td>女</td>
-<td></td>
-<td style="text-align: center;">◯</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>13</td>
-<td>堀北 大樹</td>
-<td>ホリキタ ダイキ</td>
-<td>23</td>
-<td>男</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tr></table>
-<p style="text-align: left; color: #666; margin-top: 1em; width: 90%; margin-left: auto; margin-right: auto;">※個人情報とマイページの更新があるものには「◯」を記す</p>
-</body>
-<footer>
-<p>© 2025 狭間書房</p>
-</footer>
-<div id="searchResults"></div>
-<script>
-    // URLのクエリからkeywordを取得
-    const params = new URLSearchParams(window.location.search);
-    const keyword = params.get('keyword');
-    const resultDiv = document.getElementById('result');
+    <header>
+        <div class="title-wrapper">
+            <a href="https://hazamashobo.github.io/main/index.html">
+                <h1>狭間書房</h1>
+                <p class="subtitle">Hazama Publishing</p>
+            </a>
+        </div>
+        <div class="search">
+            <form action="https://hazamashobo.github.io/result/" method="get">
+                <input type="text" id="searchInput" name="q" placeholder="キーワード入力">
+                <button type="submit">検索</button>
+            </form>
+        </div>
+    </header>
 
-    if (resultDiv) {
-      if (!keyword) {
-        resultDiv.innerHTML = "<p>データが見つかりませんでした。</p>";
-      } else {
-        const found = hiddenKeywords.find(item => item.keyword === keyword);
-        if (found) {
-          resultDiv.innerHTML = `<p>件名: <a href="${found.url}" target="_blank">${found.title}</a></p>`;
-        } else {
-          resultDiv.innerHTML = "<p>データが見つかりませんでした。</p>";
-        }
-      }
-    }
+    <nav>
+        <a href="https://hazamashobo.github.io/main/index.html">ホーム</a>
+        <a href="https://hazamashobo.github.io/company/index.html">狭間書房について</a>
+        <a href="https://hazamashobo.github.io/books/index.html">刊行物</a>
+        <a href="https://hazamashobo.github.io/contact/index.html">お問い合わせ</a>
+    </nav>
 
-    // 検索実行
-    function searchSite() {
-      const input = document.getElementById('searchInput').value.trim();
-      const resultsDiv = document.getElementById('searchResults');
-      resultsDiv.innerHTML = "";
+    <div class="content">
+        <h2>株式会社 狭間書房</h2>
+        <h1>社員名簿</h1>
+        <p class="department">部署名:編集部</p>
 
-      if (!input) {
-        resultsDiv.innerHTML = "<p>キーワードを入力してください</p>";
-        return;
-      }
+        <table>
+            <tr>
+                <th>No</th>
+                <th>氏名</th>
+                <th>カナ</th>
+                <th>年齢</th>
+                <th>性別</th>
+                <th>備考</th>
+                <th style="width: 5em; text-align: center;">個人情報</th>
+                <th style="width: 5em; text-align: center;">マイページ</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>桐須　瑛人</td>
+                <td>キリス　エイト</td>
+                <td>60</td>
+                <td>男</td>
+                <td>編集長</td>
+                <td style="text-align: center;">◯</td>
+                <td style="text-align: center;">◯</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>薮　翔子</td>
+                <td>ヤブ　ショウコ</td>
+                <td>55</td>
+                <td>女</td>
+                <td>副編集長</td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>鳥羽　舞</td>
+                <td>トバ　マイ</td>
+                <td>33</td>
+                <td>女</td>
+                <td></td>
+                <td style="text-align: center;">◯</td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>立城　順平</td>
+                <td>タテシロ　ジュンペイ</td>
+                <td>40</td>
+                <td>男</td>
+                <td>1on1担当</td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;">◯</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>佐久間　大晴</td>
+                <td>サクマ　タイセイ</td>
+                <td>35</td>
+                <td>男</td>
+                <td>企画営業</td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>安藤　玲香</td>
+                <td>アンドウ　レイカ</td>
+                <td>46</td>
+                <td>女</td>
+                <td></td>
+                <td style="text-align: center;">◯</td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>大渕　航也</td>
+                <td>オオブチ　コウヤ</td>
+                <td>33</td>
+                <td>男</td>
+                <td></td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>外山　昴</td>
+                <td>トヤマ　スバル</td>
+                <td>30</td>
+                <td>男</td>
+                <td></td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>福井　里帆</td>
+                <td>フクイ　リホ</td>
+                <td>27</td>
+                <td>女</td>
+                <td>情報システム担当</td>
+                <td style="text-align: center;">◯</td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>湯田　伊織</td>
+                <td>ユダ　イオリ</td>
+                <td>27</td>
+                <td>男</td>
+                <td></td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;">◯</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>赤羽　義人</td>
+                <td>アカハネ　ヨシヒト</td>
+                <td>25</td>
+                <td>男</td>
+                <td></td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;">◯</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>下野　凛</td>
+                <td>シモノ　リン</td>
+                <td>24</td>
+                <td>女</td>
+                <td></td>
+                <td style="text-align: center;">◯</td>
+                <td style="text-align: center;"></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>堀北　大樹</td>
+                <td>ホリキタ　ダイキ</td>
+                <td>23</td>
+                <td>男</td>
+                <td></td>
+                <td style="text-align: center;"></td>
+                <td style="text-align: center;"></td>
+            </tr>
+        </table>
 
-      const found = hiddenKeywords.find(item => item.keyword === input);
-      if (found) {
-        resultsDiv.innerHTML = `<p>${found.message}</p><p><a href="${found.url}" style="color:#666;">こちらへ進む</a></p>`;
-      } else {
-        resultsDiv.innerHTML = "<p>該当するページはありません。</p>";
-      }
-    }
-  </script>
+        <p class="table-note">※個人情報とマイページの更新があるものには、「◯」を記す</p>
+    </div>
+
+    <footer>
+        <p>© 2025 狭間書房</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const keyword = params.get('keyword');
+    </script>
 </body>
 </html>
