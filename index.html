@@ -144,7 +144,7 @@
         /* コンテンツ */
         .content {
             flex: 1;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2em auto;
             padding: 0 1em;
             width: 100%;
@@ -156,8 +156,6 @@
             font-size: 1em;
             font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS PMincho', serif;
             margin: 0;
-            margin-left: 4px;
-            border: none;
             text-align: center;
         }
 
@@ -169,19 +167,23 @@
 
         .department {
             text-align: left;
-            margin-left: 5%;
             margin-bottom: 1em;
             color: #f2f2f2;
         }
 
+        /* テーブルラッパー */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 2em;
+        }
+
         /* テーブル */
         table {
-            width: 90%;
-            margin: auto;
-            margin-bottom: 2em;
+            width: 100%;
             border: 1px solid #fff;
             border-collapse: collapse;
             font-family: 'Yu Mincho', 'Hiragino Mincho ProN', 'MS PMincho', serif;
+            min-width: 600px;
         }
 
         th, td {
@@ -189,24 +191,23 @@
             padding: 6px;
             vertical-align: middle;
             text-align: left;
+            font-size: 0.9em;
         }
 
         td:nth-child(1),
+        td:nth-child(4),
         td:nth-child(5),
-        td:nth-child(6),
-        td:nth-child(7),
-        td:nth-child(8),
         th:nth-child(1),
-        th:nth-child(5),
-        th:nth-child(6),
-        th:nth-child(7),
-        th:nth-child(8) {
+        th:nth-child(4),
+        th:nth-child(5) {
             text-align: center;
         }
 
         th:nth-child(7),
-        th:nth-child(8) {
-            width: 4em;
+        th:nth-child(8),
+        th:nth-child(6) {
+            width: auto;
+            min-width: 3em;
         }
 
         th {
@@ -224,9 +225,6 @@
             text-align: left;
             color: #999;
             font-size: 0.9em;
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
             margin-top: 1em;
         }
 
@@ -283,40 +281,19 @@
                 padding: 0 0.5em;
             }
 
-            table {
-                width: 100%;
-                font-size: 0.85em;
+            .department {
+                margin-left: 0;
+                font-size: 0.9em;
             }
 
             th, td {
                 padding: 4px;
-            }
-
-            th:nth-child(7),
-            th:nth-child(8) {
-                width: auto;
-            }
-
-            td:nth-child(2) {
-                word-break: break-word;
-                max-width: 50px;
-            }
-
-            td:nth-child(3) {
-                word-break: break-word;
-                max-width: 50px;
-            }
-
-            .table-note {
-                width: 100%;
-                padding: 0 0.5em;
-                box-sizing: border-box;
                 font-size: 0.8em;
             }
 
-            .department {
-                margin-left: 0.5em;
-                font-size: 0.9em;
+            .table-note {
+                font-size: 0.8em;
+                padding: 0 0.5em;
             }
         }
 
@@ -324,6 +301,7 @@
             header {
                 flex-direction: column;
                 gap: 0.5em;
+                padding: 0.8em;
             }
 
             header h1 {
@@ -350,7 +328,7 @@
 
             nav a {
                 margin: 0 0.3em;
-                font-size: 0.8em;
+                font-size: 0.75em;
             }
 
             .content {
@@ -359,28 +337,26 @@
             }
 
             .content h1 {
-                font-size: 1.3em;
+                font-size: 1.2em;
             }
 
-            table {
-                width: 100%;
-                font-size: 0.75em;
+            .content h2 {
+                font-size: 0.9em;
             }
 
             th, td {
                 padding: 3px;
+                font-size: 0.7em;
             }
 
             .table-note {
-                width: 100%;
+                font-size: 0.7em;
                 padding: 0 0.3em;
-                box-sizing: border-box;
-                font-size: 0.75em;
             }
 
             .department {
-                margin-left: 0.3em;
-                font-size: 0.85em;
+                margin-left: 0;
+                font-size: 0.8em;
             }
         }
     </style>
@@ -413,148 +389,150 @@
         <h1>社員名簿</h1>
         <p class="department">部署名:編集部</p>
 
-        <table>
-            <tr>
-                <th>No</th>
-                <th>氏名</th>
-                <th>カナ</th>
-                <th>年齢</th>
-                <th>性別</th>
-                <th>備考</th>
-                <th style="width: 5em; text-align: center;">個人情報</th>
-                <th style="width: 5em; text-align: center;">マイページ</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>桐須　瑛人</td>
-                <td>キリス　エイト</td>
-                <td>60</td>
-                <td>男</td>
-                <td>編集長</td>
-                <td style="text-align: center;">◯</td>
-                <td style="text-align: center;">◯</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>薮　翔子</td>
-                <td>ヤブ　ショウコ</td>
-                <td>55</td>
-                <td>女</td>
-                <td>副編集長</td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>鳥羽　舞</td>
-                <td>トバ　マイ</td>
-                <td>33</td>
-                <td>女</td>
-                <td></td>
-                <td style="text-align: center;">◯</td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>立城　順平</td>
-                <td>タテシロ　ジュンペイ</td>
-                <td>40</td>
-                <td>男</td>
-                <td>1on1担当</td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;">◯</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>佐久間　大晴</td>
-                <td>サクマ　タイセイ</td>
-                <td>35</td>
-                <td>男</td>
-                <td>企画営業</td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>安藤　玲香</td>
-                <td>アンドウ　レイカ</td>
-                <td>46</td>
-                <td>女</td>
-                <td></td>
-                <td style="text-align: center;">◯</td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>大渕　航也</td>
-                <td>オオブチ　コウヤ</td>
-                <td>33</td>
-                <td>男</td>
-                <td></td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>外山　昴</td>
-                <td>トヤマ　スバル</td>
-                <td>30</td>
-                <td>男</td>
-                <td></td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>福井　里帆</td>
-                <td>フクイ　リホ</td>
-                <td>27</td>
-                <td>女</td>
-                <td>情報システム担当</td>
-                <td style="text-align: center;">◯</td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>湯田　伊織</td>
-                <td>ユダ　イオリ</td>
-                <td>27</td>
-                <td>男</td>
-                <td></td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;">◯</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>赤羽　義人</td>
-                <td>アカハネ　ヨシヒト</td>
-                <td>25</td>
-                <td>男</td>
-                <td></td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;">◯</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>下野　凛</td>
-                <td>シモノ　リン</td>
-                <td>24</td>
-                <td>女</td>
-                <td></td>
-                <td style="text-align: center;">◯</td>
-                <td style="text-align: center;"></td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>堀北　大樹</td>
-                <td>ホリキタ　ダイキ</td>
-                <td>23</td>
-                <td>男</td>
-                <td></td>
-                <td style="text-align: center;"></td>
-                <td style="text-align: center;"></td>
-            </tr>
-        </table>
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>氏名</th>
+                    <th>カナ</th>
+                    <th>年齢</th>
+                    <th>性別</th>
+                    <th>備考</th>
+                    <th>個人情報</th>
+                    <th>マイページ</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>桐須　瑛人</td>
+                    <td>キリス　エイト</td>
+                    <td>60</td>
+                    <td>男</td>
+                    <td>編集長</td>
+                    <td>◯</td>
+                    <td>◯</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>薮　翔子</td>
+                    <td>ヤブ　ショウコ</td>
+                    <td>55</td>
+                    <td>女</td>
+                    <td>副編集長</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>鳥羽　舞</td>
+                    <td>トバ　マイ</td>
+                    <td>33</td>
+                    <td>女</td>
+                    <td></td>
+                    <td>◯</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>立城　順平</td>
+                    <td>タテシロ　ジュンペイ</td>
+                    <td>40</td>
+                    <td>男</td>
+                    <td>1on1担当</td>
+                    <td></td>
+                    <td>◯</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>佐久間　大晴</td>
+                    <td>サクマ　タイセイ</td>
+                    <td>35</td>
+                    <td>男</td>
+                    <td>企画営業</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>安藤　玲香</td>
+                    <td>アンドウ　レイカ</td>
+                    <td>46</td>
+                    <td>女</td>
+                    <td></td>
+                    <td>◯</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>大渕　航也</td>
+                    <td>オオブチ　コウヤ</td>
+                    <td>33</td>
+                    <td>男</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>外山　昴</td>
+                    <td>トヤマ　スバル</td>
+                    <td>30</td>
+                    <td>男</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>福井　里帆</td>
+                    <td>フクイ　リホ</td>
+                    <td>27</td>
+                    <td>女</td>
+                    <td>情報システム担当</td>
+                    <td>◯</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>湯田　伊織</td>
+                    <td>ユダ　イオリ</td>
+                    <td>27</td>
+                    <td>男</td>
+                    <td></td>
+                    <td></td>
+                    <td>◯</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>赤羽　義人</td>
+                    <td>アカハネ　ヨシヒト</td>
+                    <td>25</td>
+                    <td>男</td>
+                    <td></td>
+                    <td></td>
+                    <td>◯</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>下野　凛</td>
+                    <td>シモノ　リン</td>
+                    <td>24</td>
+                    <td>女</td>
+                    <td></td>
+                    <td>◯</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>堀北　大樹</td>
+                    <td>ホリキタ　ダイキ</td>
+                    <td>23</td>
+                    <td>男</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
 
         <p class="table-note">※個人情報とマイページの更新があるものには、「◯」を記す</p>
     </div>
@@ -562,10 +540,5 @@
     <footer>
         <p>© 2025 狭間書房</p>
     </footer>
-
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const keyword = params.get('keyword');
-    </script>
 </body>
 </html>
